@@ -32,16 +32,16 @@ Date: 2019/11/23
    to do so, please change the value, as shown in the example below.
   -->
   <?ignore
-    <arg name="openpose_args" value="--hand --disable_multi_thread --model_folder /home/ravi/openpose/models/" />
+    <arg name="openpose_args" value="--hand --disable_multi_thread --model_folder /home/ngs/openpose/models/" />
   ?>
   <!-- full path to the model dir of openpose -->
-  <arg name="openpose_args" value="--model_folder /home/ravi/openpose/models/" />
+  <arg name="openpose_args" value="--hand --model_folder /home/ngs/workspace/openpose/models/" />
 
   <!-- rostopic to publish the 3D skeleton data -->
   <arg name="pub_topic" default="/frame" />
 
   <!-- thickness of the line used to draw skeleton for visualization inside RViz -->
-  <arg name="skeleton_line_width" default="0.01" />
+  <arg name="skeleton_line_width" default="0.05" />
 
   <!-- size of the text used to indicate the id of a skeleton for visualization inside RViz -->
   <arg name="id_text_size" default="0.2" />
@@ -66,4 +66,7 @@ Date: 2019/11/23
     <arg name="synchronous" value="$(arg synchronous)" />
     <arg name="py_openpose_path" value="$(arg py_openpose_path)" />
   </include>
+
+  <!-- <include file="$(find zeno)/launch/BaxterSim.launch" /> -->
+  <include file="$(find zeno)/launch/two_robot.launch" />
 </launch>

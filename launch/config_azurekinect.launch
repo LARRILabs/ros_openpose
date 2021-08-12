@@ -72,6 +72,7 @@ Date: 2020/08/10
     <include file="$(find azure_kinect_ros_driver)/launch/driver.launch" >
       <arg name="required" value="true" />
       <arg name="point_cloud_in_depth_frame" value="false" />
+      <arg name="overwrite_robot_description" value="false" />
     </include>
     <!-- invoke rviz -->
     <group if="$(arg rviz)" >
